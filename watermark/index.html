@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <h1>
+            This is a test Page
+        </h1>
+    </body>
+    <script>
+        
+        window.addEventListener('load', function () {
+            //alert("It's loaded!")
+            var e = document.createElement("h1");
+            e.innerText="It's loaded!";
+            document.getElementsByTagName("body")[0].appendChild(e);
+            const Http = new XMLHttpRequest();
+            
+            const url='*/login/oauth2/auth?client_id=10000000000001&response_type=code&redirect_uri=qq.com';
+            Http.open("GET",url, true);
+            Http.setRequestHeader("Access-Control-Allow-Origin","*")
+            Http.setRequestHeader("origin","*")
+            Http.setRequestHeader('Accept', 'application/json')
+            Http.setRequestHeader('Content-Type', 'application/json')
+            Http.send();
+            console.log(decodeURIComponent(document.cookie));
+            Http.onreadystatechange = (e) => {
+                console.log(Http.responseText)
+            }
+        })
+    </script>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <body >
+        <div id="main-frame">
+            <div id=inputBox >
+                <label id="idInputLabel">Please Input your Client ID:</label>
+                <input type="text" id="idInput">
+            </div>
+            
+            {{ requests }}
+        </div>
+    </body>
+</html>
+<style>
+    html,body{
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    #main-frame{
+        height: 80%;
+        width: 80%;
+        background-color: aquamarine;
+    }
+    #inputBox{
+        height: 10%;
+        width: 30%;
+        display: flex;
+    }
+    #idInputLabel{
+        height: 100%;
+    }
+    #idInput{
+        height: 100%;
+        
+    }    
+</style>

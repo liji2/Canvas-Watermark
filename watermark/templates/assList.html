@@ -1,0 +1,92 @@
+
+<!DOCTYPE html>
+<html lang="en-us“>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.3.0/jspdf.umd.min.js"></script>
+    <script>
+        function addWaterMark(doc,text) {
+            var totalPages = doc.internal.getNumberOfPages();
+
+            for (i = 1; i <= totalPages; i++) {
+                doc.setPage(i);
+                //doc.addImage(imgData, 'PNG', 40, 40, 75, 75);
+                doc.setTextColor(150);
+                doc.text(50, doc.internal.pageSize.height - 30, text);
+            }
+
+            return doc;
+        }
+        function getPdf() {
+
+            var doc = new jsPDF('p', 'pt', 'a4');
+            doc = addWaterMark(doc);
+
+            doc.save('test');
+
+        }
+    </script>
+    <body >
+        <div id="main-frame">
+            <h1>{{ title }}</h1>
+            
+            <ol style="list-style: none; "> 
+                <!-- For loop logic of jinja template -->
+                {%for i in range(0, len)%} 
+                    <div style="display: flex;">
+                        <li style="background-color: burlywood;" >{{Ass[i]}}</li>
+                        <li style="background-color:rgb(66, 140, 238);">{{AssID[i]}}</li>
+                        <li style="background-color:orange;">
+                            <form method="POST" action="http://flip3.engr.oregonstate.edu:2333/download/watermarked.pdf"  enctype="multipart/form-data">
+                                Online
+                                <input type="file" name="file">
+                                <input type="submit" value="submit" onclick="location.href='http://flip3.engr.oregonstate.edu:2333/download/waterarked.pdf'">
+                          </form>
+                        </li> 
+                        <li>
+                            Local(Working)<input type="file" id="fileInput{{i}}">
+                            <script>
+                                document.getElementById('fileInput{{i}}' ).addEventListener('change', function selectedFileChanged() {
+                                    console.log(this.files); // will contain information about the file that was selected.
+                                });
+                            </script>
+                        </li>
+                    </div>
+                    
+                {%endfor%} 
+                  
+            </ol> 
+        </div>
+    </body>
+</html>
+<style>
+    html,body{
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    #main-frame{
+        height: 80%;
+        width: 80%;
+        background-color: aquamarine;
+    }
+    #inputBox{
+        height: 10%;
+        width: 30%;
+        display: flex;
+    }
+    #idInputLabel{
+        height: 100%;
+    }
+    #idInput{
+        height: 100%;
+        
+    }
+    li{
+        height: 50px;
+        background-color: aqua;
+        margin-bottom: 5px;
+        min-width: 500px;
+        font-size: 35px;
+    } 
+</style>
