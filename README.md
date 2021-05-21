@@ -1,10 +1,10 @@
 Canvas Assignment Watermarking
 
-A. module:
-Python3.8
-Flask 2.0: Python based web framework that lets you develop web applications.
-PyPDF2: Python library built as PDF toolkit, perform things like creating a new PDF file from scratch or merging two PDF files.
-OAuth2: OAuth2 is a protocol designed to let third-party applications perform actions as a user without getting the user's password. Canvas uses OAuth2 for authentication and authorization of the Canvas API.
+Module:
+- Python3.8
+- Flask 2.0: Python based web framework that lets you develop web applications.
+- PyPDF2: Python library built as PDF toolkit, perform things like creating a new PDF file from scratch or merging two PDF files.
+- OAuth2: OAuth2 is a protocol designed to let third-party applications perform actions as a user without getting the user's password. Canvas uses OAuth2 for authentication and authorization of the Canvas API.
 
 B. process: 
 Click PDF project in module and then it will redirect to a submit html (same as click the pdf download link), user can submit the original pdf (hello.py → asslist.html)
