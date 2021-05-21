@@ -11,6 +11,7 @@ Process:
 - Canvas send post which contains the formdata about students’ information and original pdf file.  (asslist.html → hello.py)
 - According to the client ID set before(dev key), use oauth2 to identify and ask for a temporary token to get information from API (hello.py)
 - API send information to our server and then encrypt the information as watermark(hello.py → demo.py)
-- Server combine the watermark and pdf file, generate a new watermarked pdf (demo.py)
-- Output that watermarked pdf to user (demo.py -> hello.py)
+- Output watermarked pdf (demo.py -> hello.py)
+- Server send the file to browser as a download pdf (hello.py -> browser)
+
 
