@@ -10,8 +10,8 @@ Process:
 - Click PDF project in module and then it will redirect to a submit html (same as click the pdf download link), user can submit the original pdf (main.py → asslist.html)
 - Canvas send post which contains the formdata about students’ information and original pdf file.  (asslist.html → main.py)
 - According to the client ID set before(dev key), use oauth2 to identify and ask for a temporary token to get information from API (main.py)
-- API send information to our server and then encrypt the information as watermark(hello.py → water.py)
-- Output watermarked pdf (water.py -> hello.py) 
-- Server send the file to browser as a download pdf (hello.py -> browser)
+- API send information to our server and then encrypt the information as watermark((main.py → water.py)
+- Output watermarked pdf (water.py -> (main.py) 
+- Server send the file to browser as a download pdf ((main.py -> browser)
 
 
