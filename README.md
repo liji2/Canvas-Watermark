@@ -41,13 +41,40 @@ time_zone=$Person.address.timezone
 user_id=$Canvas.user.id
 
 ```
+### Start
+```
+python3 main.py
 
-Process: 
-- Click PDF project in module and then it will redirect to a submit html (same as click the pdf download link), user can submit the original pdf (main.py → asslist.html)
-- Canvas send post which contains the formdata about students’ information and original pdf file.  (asslist.html → main.py)
-- According to the client ID set before(dev key), use oauth2 to identify and ask for a temporary token to get information from API (main.py)
-- API send information to our server and then encrypt the information as watermark((main.py → water.py)
-- Output watermarked pdf (water.py -> (main.py) 
-- Server send the file to browser as a download pdf ((main.py -> browser)
+```
+### Config
+The watermarker allows user customizetheir watermark within certain limits<br>
+```
+# config.ini
+[Default]
+alpha = 0.1
+Font = Helvetica
+FontSize = 14
+# Color 0.0 - 1.0
+FontColorR = 0.4
+FontColorG = 0.5
+FontColorB = 0.3
+PageWidth = 300
+PageHeight = 500
+```
+We expect that the work of adding watermarks can be further scripted, just like we tried in config.ini.
+## Process
+- Receive user data as form-data from canvas
+- Response a Interface
+- Send PDF to server with requested information
+- Watermarking PDF with encoded information from user
+- Resonse(200) if uploaded
+- Send download request from Canvas 
+- Send watermarked PDF back
+## How To Use 
+- Open the course page on Canvas
+- Double click the app you created
+- Choose a asssignment you wanna watermark
+- Upload a file
+- Tah Dah!!!!👻👻👻👻👻
 
 
