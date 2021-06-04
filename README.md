@@ -7,11 +7,11 @@ Module:
 - OAuth2: OAuth2 is a protocol designed to let third-party applications perform actions as a user without getting the user's password. Canvas uses OAuth2 for authentication and authorization of the Canvas API.
 
 Process: 
-- Click PDF project in module and then it will redirect to a submit html (same as click the pdf download link), user can submit the original pdf (hello.py → asslist.html)
-- Canvas send post which contains the formdata about students’ information and original pdf file.  (asslist.html → hello.py)
-- According to the client ID set before(dev key), use oauth2 to identify and ask for a temporary token to get information from API (hello.py)
-- API send information to our server and then encrypt the information as watermark(hello.py → demo.py)
-- Output watermarked pdf (demo.py -> hello.py) 
+- Click PDF project in module and then it will redirect to a submit html (same as click the pdf download link), user can submit the original pdf (main.py → asslist.html)
+- Canvas send post which contains the formdata about students’ information and original pdf file.  (asslist.html → main.py)
+- According to the client ID set before(dev key), use oauth2 to identify and ask for a temporary token to get information from API (main.py)
+- API send information to our server and then encrypt the information as watermark(hello.py → water.py)
+- Output watermarked pdf (water.py -> hello.py) 
 - Server send the file to browser as a download pdf (hello.py -> browser)
 
 
