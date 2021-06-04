@@ -4,7 +4,7 @@ Module:
 - Reportlab
 - Canvasapi
 - Werkzeug
-- Requests==2.25.1
+- Requests
 - Python3.8
 - Flask 2.0: Python based web framework that lets you develop web applications.
 - PyPDF2: Python library built as PDF toolkit, perform things like creating a new PDF file from scratch or merging two PDF files.
